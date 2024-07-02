@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;  /*ye isliye taaki x direction me scroll na ho */
+    overflow-y: auto;
+
+    perspective: 10px; /*its for z axis ,you can give any value to it.*/
+
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d; /*if we r not writing this line it means 2d effect will continue*/
+    z-index: -1;/*this is for overlapping*/
+}
+
+/* for overlapping */
+.foreground,.background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index:-1;  /*iss line ye hua jo content tha adventure woh unn sab ka upar aa gya*/
+    object-fit: cover;/*fit image in container*/
+}
+
+.background{
+    transform: translateZ(-40px);scale: 5;
+}
+
+.foreground{
+    transform: translateZ(-20px);scale: 3;
+}
+
+h1{
+    color:white;
+    position: absolute;
+    font-size: 10rem;
+    transform: translateX(-50);
+    text-shadow:0 0 10px rgba(0,0,0, 0.3) ;
+    top: 5rem;
+    left: 15%;
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    
+
+}
+
+.bg1{
+    background-image: url(biking.webp);
+}
+
+.bg2{
+    background-image: url(Paragliding.jpg);
+}
+.bg3{
+    background-image: url(surfing.avif);
+}
+
+.secheading{
+    font-size: 5rem;
+    padding:0 10rem ;
+}
+
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin:5rem 0;
+}
+
+.desc{
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 0.5rem 2.5rem;
+    text-align: center;
+    top: 50%;
+    left: 45%;
+font-size: 3.5rem ;
+font-weight:600 ;
+}
